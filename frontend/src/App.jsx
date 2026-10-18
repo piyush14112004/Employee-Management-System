@@ -193,9 +193,9 @@ function App() {
                     </tr>
                   </thead>
                   <tbody>
-                    {employees.map((employee) => (
+                    {employees.map((employee, index) => (
                       <tr key={employee.id}>
-                        <td>#{employee.id}</td>
+                        <td>#{index + 1}</td>
                         <td className="employee-name">{employee.name}</td>
                         <td>{employee.email}</td>
                         <td>
