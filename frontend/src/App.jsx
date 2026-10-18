@@ -8,7 +8,8 @@ function App() {
   const [department, setDepartment] = useState("");
   const [editingId, setEditingId] = useState(null);
 
-  const API = "http://localhost:8080/api/employees";
+  const API =
+    "https://employee-management-system-api-u08n.onrender.com/api/employees";
 
   const loadEmployees = async () => {
     try {
@@ -16,7 +17,9 @@ function App() {
       if (!response.ok) throw new Error("Failed to load employees");
       setEmployees(await response.json());
     } catch {
-      alert("Backend start hai? Employees load nahi ho paaye.");
+      alert(
+        "Could not load employees. Please check the backend connection and try again."
+      );
     }
   };
 
@@ -52,7 +55,9 @@ function App() {
       await loadEmployees();
       alert(editingId ? "Employee updated!" : "Employee added!");
     } catch {
-      alert("Employee save nahi hua. Backend check karo.");
+      alert(
+        "Could not save the employee. Please check the backend connection and try again."
+      );
     }
   };
 
@@ -64,7 +69,7 @@ function App() {
   };
 
   const deleteEmployee = async (id) => {
-    if (!window.confirm("Kya aap is employee ko delete karna chahte hain?")) {
+    if (!window.confirm("Are you sure you want to delete this employee?")) {
       return;
     }
 
@@ -74,7 +79,7 @@ function App() {
       await loadEmployees();
       alert("Employee deleted!");
     } catch {
-      alert("Employee delete nahi hua.");
+      alert("Could not delete the employee. Please try again.");
     }
   };
 
@@ -222,6 +227,7 @@ function App() {
             )}
           </div>
         </section>
+
         <footer>EmployEase · Employee Management System</footer>
       </main>
     </div>
