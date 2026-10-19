@@ -246,11 +246,6 @@ Piyush Kumar
 
 
 
-\## License
-
-
-
-This project is created for educational and internship purposes.
 
 
 
